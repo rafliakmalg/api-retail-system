@@ -92,4 +92,10 @@ class BarangController extends Controller
 
         return $this->successResponse(null, 'Barang berhasil dihapus');
     }
+
+    public function listKategori()
+    {
+        $kategoriList = Barang::getKategoriOptions();
+        return $this->successResponse($kategoriList, 'Daftar kategori berhasil diambil');
+    }
 }

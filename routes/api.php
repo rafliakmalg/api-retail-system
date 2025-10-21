@@ -19,11 +19,13 @@ Route::prefix('barang')->group(function () {
     Route::get('/{id}', [BarangController::class, 'show']);
     Route::put('/{id}', [BarangController::class, 'update']);
     Route::delete('/{id}', [BarangController::class, 'destroy']);
+    Route::get('/kategori/list', [BarangController::class, 'listKategori']);
 });
+
 
 Route::prefix('penjualan')->group(function () {
     Route::get('/', [PenjualanController::class, 'index']);
-        Route::post('/', [PenjualanController::class, 'store']);
+    Route::post('/', [PenjualanController::class, 'store']);
     Route::get('/{id}', [PenjualanController::class, 'show']);
     Route::put('/{id}', [PenjualanController::class, 'update']);
     Route::delete('/{id}', [PenjualanController::class, 'destroy']);
